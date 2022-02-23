@@ -1,12 +1,13 @@
-const title = <h1>Hello World</h1>;
-const desc = <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris</p>;
+const title = 'Hello World';
+const desc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris';
+const mainTitleId = 'main-title';
+const name = 'Tom';
 
-
-const header = React.createElement(
-    'header',
-    null,
-    title,
-    desc
+const header = (
+    <header>
+        <h1 id={mainTitleId}>{name}'s React Element</h1>
+        <p>{desc}</p>
+    </header>
 );
 
 ReactDOM.render(
