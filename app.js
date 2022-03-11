@@ -1,16 +1,45 @@
-const title = 'Hello World';
-const desc = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris';
-const mainTitleId = 'main-title';
-const name = 'Tom';
+const Header = (props) => {
+    return (
+        <header>
+            <h1>{props.title}</h1>
+            <span className="stats">Players: {props.totalPlayers}</span>
+        </header>
+    );
+}
 
-const header = (
-    <header>
-        <h1 id={mainTitleId}>{name}'s React Element</h1>
-        <p>{desc}</p>
-    </header>
-);
+const Player = () => {
+    return (
+        <div className="player">
+            <span className="player-name">
+                Tom
+            </span>
+            <Counter />
+        </div>
+    );
+}
+
+const Counter = () => {
+    return (
+        <div className="counter">
+            <button className="counter-action decrement"> - </button>
+            <span className="counter-score">35</span>
+            <button className="counter-action increment"> + </button>
+        </div>
+    );
+}
+
+const App = () => {
+    return (
+        <div className="scoreboard">
+            <Header title="My Scoreboard" totalPlayers={1} />
+
+            {/* Player List */}
+            <Player />
+        </div>
+    );
+}
 
 ReactDOM.render(
-    header,
+    <App />,
     document.getElementById('root')
 );
